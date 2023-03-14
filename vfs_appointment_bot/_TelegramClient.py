@@ -13,6 +13,7 @@ class _TelegramClient:
 
     def send_message(self, message):
         url = f"https://api.telegram.org/bot{self.bot_token}/sendMessage?chat_id={self.chat_id}&parse_mode={self.parse_mode}&text={message}"
+        #https://api.telegram.org/bot5958662075:AAGufkV9m8B1G-6-hZyBdk7VLUjnm2DENXk/sendMessage?chat_id=6121778732&parse_mode=Markdown&text=Hi
 
         logging.debug("Sending message")
         try:

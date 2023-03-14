@@ -39,7 +39,8 @@ class _VfsClient:
         firefox_options.add_argument("--disable-application-cache")
         firefox_options.add_argument("--disable-gpu")
         firefox_options.add_argument("--disable-dev-shm-usage")
-        self._web_driver = webdriver.Firefox(options=firefox_options)
+        #self._web_driver = webdriver.Firefox(options=firefox_options)
+        self._web_driver = webdriver.Chrome(executable_path='/Users/qianhu/Documents/playcodes/vfs-appointment-bot/chromedriver_mac64/chromedriver')
 
         # make sure that the browser is full screen,
         # else some buttons will not be visible to selenium
@@ -83,6 +84,7 @@ class _VfsClient:
         _new_booking_button = self._web_driver.find_element_by_xpath(
             "//section/div/div[2]/button/span"
         )
+        #_new_booking_button = self._web_driver.find_element_by_class_name('mat-button-wrapper')
         _new_booking_button.click()
         time.sleep(5)
         _visa_centre_dropdown = self._web_driver.find_element_by_xpath(

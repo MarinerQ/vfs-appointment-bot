@@ -48,7 +48,10 @@ if __name__ == "__main__":
         except Exception as e:
             logging.info(e.args[0] + ". Please check the logs for more details")
             logging.debug(e, exc_info=True, stack_info=True)
-            countdown(int(60))
+            logging.info("Quitting browser...")
+            _vfs_client._web_driver.close()
+            _vfs_client._web_driver.quit()
+            countdown(int(20))
             pass
         print("\n")
         count += 1
